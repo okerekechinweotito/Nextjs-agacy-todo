@@ -17,7 +17,6 @@ const App = () => {
       const loadedTodos = JSON.parse(json);
       let newTodo = todos.concat(loadedTodos);
 
-      console.log("~ loadedTodos", loadedTodos);
       if (loadedTodos) {
         setTimeout(() => {
           setTodos(newTodo);
