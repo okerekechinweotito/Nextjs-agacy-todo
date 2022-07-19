@@ -96,6 +96,8 @@ const App = () => {
       }
       return todo;
     });
+    const json = JSON.stringify(updatedTodos);
+    localStorage.setItem("todos", json);
     setTodos(updatedTodos);
     setTodoEditing(null);
     setEditingText("");
@@ -120,6 +122,8 @@ const App = () => {
   function deleteTodo(id) {
     let updatedTodos = [...todos].filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
+    const json = JSON.stringify(updatedTodos);
+    localStorage.setItem("todos", json);
 
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
       method: "DELETE",
@@ -144,6 +148,8 @@ const App = () => {
       return todo;
     });
     setTodos(updatedTodos);
+    const json = JSON.stringify(updatedTodos);
+    localStorage.setItem("todos", json);
 
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
       method: "PATCH",
